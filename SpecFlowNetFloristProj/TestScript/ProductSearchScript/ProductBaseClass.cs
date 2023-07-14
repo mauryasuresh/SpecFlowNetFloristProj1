@@ -73,7 +73,7 @@ namespace SpecFlowNetFloristProj
                 {
                     // Popup did not appear, continue with the rest of the code
                 }
-                giftwizard.SelectDateFromCalendar("30");
+                giftwizard.SelectDateFromCalendar("23");
                 giftwizard.NextDeliveryType();
                 LoginPage.AddToFinalBasket();
                 Thread.Sleep(1000);
