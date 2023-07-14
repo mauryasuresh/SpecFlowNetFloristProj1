@@ -19,7 +19,7 @@ namespace SpecFlowNetFloristProj.Utils
 {
     public class SeleniumUtility    
     {
-        public static IWebDriver driver =null;
+        public static IWebDriver driver;
         public static Actions action = null;
         public WebDriverWait wait = null;
 

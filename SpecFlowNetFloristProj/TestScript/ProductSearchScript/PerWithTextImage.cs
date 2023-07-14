@@ -64,7 +64,7 @@ namespace SpecFlowNetFloristProj.ProductSearchScript
                 options.AddArgument("no-sandbox");
                 ChromeDriverService driverService = ChromeDriverService.CreateDefaultService();
                 driverService.HideCommandPromptWindow = true;
-                driver = new ChromeDriver(driverService, options, TimeSpan.FromMinutes(1));
+                ChromeDriver driver = new ChromeDriver(driverService, options, TimeSpan.FromMinutes(1));
 
                 driver.Manage().Window.Maximize();
                 driver.Navigate().GoToUrl("https://stage2.netflorist.co.za/");

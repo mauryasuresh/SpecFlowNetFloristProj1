@@ -64,7 +64,7 @@ namespace SpecFlowNetFloristProj
                     ghomePage.SelectSuburbById(id);
                     Thread.Sleep(1000);
 
-                    ghomePage.SelectDate(new DateTime(2023, 7, 3));
+                    ghomePage.SelectDate(new DateTime(2023, 7, 16));
 
                     ghomePage.FindItNow();
 
@@ -173,7 +173,7 @@ namespace SpecFlowNetFloristProj
                         //select date 
 
 
-                        ghomePage.SelectDateFromCalendar("3");
+                        ghomePage.SelectDateFromCalendar("16");
                         ghomePage.NextDeliveryType();
 
                         driver.Navigate().Back();
