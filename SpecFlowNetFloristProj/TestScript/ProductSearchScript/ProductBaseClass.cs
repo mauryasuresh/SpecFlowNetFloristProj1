@@ -86,7 +86,7 @@ namespace SpecFlowNetFloristProj
             }
             catch (Exception)
             {
-                string screenshotFilePath = @"D:\AutoTesting\SpecFlowNetFloristProj\SpecFlowNetFloristProj\Screenshots\screenshot2.png";  // Provide the desired file path
+                string screenshotFilePath = @"C:\Users\Suresh Maurya\source\repos\SpecFlowNetFloristProj1\SpecFlowNetFloristProj\Screenshots\screenshot2.png";  // Provide the desired file path
                 TakeScreenshot(driver, screenshotFilePath);
                 Console.WriteLine("Screenshot captured: " + screenshotFilePath);
                 //Console.WriteLine("Exception occurred: " + ex.Message);

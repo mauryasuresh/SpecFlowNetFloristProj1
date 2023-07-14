@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using SpecFlowNetFloristProj.StepDefinitions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -12,7 +12,7 @@ public static class ExtentManager
     {
         if (extent == null)
         {
-            string reportPath = @"D:\Csharp\SpecFlowNetFloristProj\SpecFlowNetFloristProj\ExtentReports\extentReport.html";
+            string reportPath = @"C:\Users\Suresh Maurya\source\repos\SpecFlowNetFloristProj1\SpecFlowNetFloristProj\ExtentReports\extentReport.html";
             htmlReporter = new ExtentHtmlReporter(reportPath);
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);

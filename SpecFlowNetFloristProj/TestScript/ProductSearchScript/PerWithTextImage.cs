@@ -100,7 +100,7 @@ namespace SpecFlowNetFloristProj.ProductSearchScript
                     textField.SendKeys("Test");
                     Thread.Sleep(1000);
                 }
-                string imagePath = @"C:\Users\Priyanka Shirsath\Pictures\Screenshots\sample.png";
+                string imagePath = @"C:\Users\Suresh Maurya\OneDrive\Pictures\TestPic\Sample.jpg";
 
                 List<IWebElement> UploadImage = driver.FindElements(By.XPath("//a[@title='Upload']")).ToList();
 
@@ -234,7 +234,7 @@ namespace SpecFlowNetFloristProj.ProductSearchScript
             }
             catch (Exception)
             {
-                string screenshotFilePath = @"D:\Csharp\SpecFlowNetFloristProj\SpecFlowNetFloristProj\Screenshots\screenshot3.png";
+                string screenshotFilePath = @"C:\Users\Suresh Maurya\source\repos\SpecFlowNetFloristProj1\SpecFlowNetFloristProj\Screenshots\screenshot3.png";
                 TakeScreenshot(driver, screenshotFilePath);
                 Console.WriteLine("Screenshot captured: " + screenshotFilePath);
                 //Console.WriteLine("Exception occurred: " + ex.Message);

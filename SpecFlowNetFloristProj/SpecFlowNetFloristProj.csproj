@@ -54,7 +54,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\" />
     <Folder Include="ExtentReports\" />
     <Folder Include="Screenshots\" />
   </ItemGroup>

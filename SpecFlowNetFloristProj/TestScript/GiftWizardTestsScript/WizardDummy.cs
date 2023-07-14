@@ -192,7 +192,7 @@ namespace SpecFlowNetFloristProj
 
             catch (Exception)
             {
-                string screenshotPath = @"D:\AutoTesting\SpecFlowNetFloristProj\SpecFlowNetFloristProj\Screenshots\screenshot.png";
+                string screenshotPath = @"C:\Users\Suresh Maurya\source\repos\SpecFlowNetFloristProj1\SpecFlowNetFloristProj\Screenshots\screenshot.png";
                 SeleniumUtility.TakeScreenshot(driver, screenshotPath);
                 test.Log(Status.Fail, "Test Failed",
                     MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotPath).Build());
@@ -360,7 +360,7 @@ namespace SpecFlowNetFloristProj
                 textField.Clear();
                 textField.SendKeys("X");
             }
-            string imagePath = @"C:\Users\Priyanka Shirsath\Pictures\Screenshots\sample.png";
+            string imagePath = @"C:\Users\Suresh Maurya\OneDrive\Pictures\TestPic\Sample.jpg";
 
             List<IWebElement> UploadImage = driver.FindElements(By.XPath("//a[@title='Upload']")).ToList();
 
@@ -428,7 +428,7 @@ namespace SpecFlowNetFloristProj
                 personalizedButton.Click();
             }
 
-            string imagePath = @"C:\Users\Priyanka Shirsath\Pictures\Screenshots\sample.png";
+            string imagePath = @"C:\Users\Suresh Maurya\OneDrive\Pictures\TestPic\Sample.jpg";
             List<IWebElement> UploadImage = driver.FindElements(By.XPath("//a[@title='Upload']")).ToList();
             if (UploadImage.Count > 0)
             {
