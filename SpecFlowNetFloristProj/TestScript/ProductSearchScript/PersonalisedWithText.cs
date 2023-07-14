@@ -145,7 +145,7 @@ namespace SpecFlowNetFloristProj
                 {
                     Console.WriteLine("Popup did not appear");
                 }
-                giftwizard.SelectDateFromCalendar("21"); //provide date 
+                giftwizard.SelectDateFromCalendar("22"); //provide date 
                 giftwizard.NextDeliveryType();
                 LoginPage.AddToFinalBasket();
                 Thread.Sleep(1000);
