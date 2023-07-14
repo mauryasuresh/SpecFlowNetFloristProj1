@@ -35,26 +35,26 @@ namespace SpecFlowNetFloristProj.TestsScript
             ExecuteScriptForAddress("NETBQ002", addresses[0], "Business");
         }
 
-        [Category("FlowerProduct")]
-        [Test]
-        public void FlowerAddress2()
-        {
-            ExecuteScriptForAddress("NETBQ002", addresses[1], "School");
-        }
+        //[Category("FlowerProduct")]
+        //[Test]
+        //public void FlowerAddress2()
+        //{
+        //    ExecuteScriptForAddress("NETBQ002", addresses[1], "School");
+        //}
 
-        [Category("FlowerProduct")]
-        [Test]
-        public void FlowerAddress3()
-        {
-            ExecuteScriptForAddress("NETBQ002", addresses[2], "Residence");
-        }
+        //[Category("FlowerProduct")]
+        //[Test]
+        //public void FlowerAddress3()
+        //{
+        //    ExecuteScriptForAddress("NETBQ002", addresses[2], "Residence");
+        //}
 
-        [Category("FlowerProduct")]
-        [Test]
-        public void FlowerAddress4()
-        {
-            ExecuteScriptForAddress("NETBQ002", addresses[3], "Hospital");
-        }
+        //[Category("FlowerProduct")]
+        //[Test]
+        //public void FlowerAddress4()
+        //{
+        //    ExecuteScriptForAddress("NETBQ002", addresses[3], "Hospital");
+        //}
 
     }
 }

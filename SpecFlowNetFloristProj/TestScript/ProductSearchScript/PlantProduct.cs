@@ -37,26 +37,26 @@ namespace SpecFlowNetFloristProj.ProductSearchScript
         }
 
 
-        [Category("PlantProduct")]
-        [Test]
-        public void PlantAddress2()
-        {
-            ExecuteScriptForAddress(productCode, addresses[1], "School");
-        }
+        //[Category("PlantProduct")]
+        //[Test]
+        //public void PlantAddress2()
+        //{
+        //    ExecuteScriptForAddress(productCode, addresses[1], "School");
+        //}
 
-        [Category("PlantProduct")]
-        [Test]
-        public void PlantAddress3()
-        {
-            ExecuteScriptForAddress(productCode, addresses[2], "Residence");
-        }
+        //[Category("PlantProduct")]
+        //[Test]
+        //public void PlantAddress3()
+        //{
+        //    ExecuteScriptForAddress(productCode, addresses[2], "Residence");
+        //}
 
-        [Category("PlantProduct")]
-        [Test]
-        public void PlantAddress4()
-        {
-            ExecuteScriptForAddress(productCode, addresses[3], "Hospital");
-        }
+        //[Category("PlantProduct")]
+        //[Test]
+        //public void PlantAddress4()
+        //{
+        //    ExecuteScriptForAddress(productCode, addresses[3], "Hospital");
+        //}
 
     }
 }

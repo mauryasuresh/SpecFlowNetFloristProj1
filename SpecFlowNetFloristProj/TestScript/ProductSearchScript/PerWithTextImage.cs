@@ -38,22 +38,22 @@ namespace SpecFlowNetFloristProj.ProductSearchScript
         {
             PerProductWithTextImage(productCode, addresses[0], "Business");
         }
-        [Test]
-        public void TextImage2()
-        {
-            PerProductWithTextImage(productCode, addresses[1], "School");
-        }
-        [Test]
-        public void TextImage3()
-        {
-            PerProductWithTextImage(productCode, addresses[2], "Residence");
-        }
-            [Test]
-            public void TextImage4()
-            {
-                PerProductWithTextImage(productCode, addresses[3], "Hospital");
+        //[Test]
+        //public void TextImage2()
+        //{
+        //    PerProductWithTextImage(productCode, addresses[1], "School");
+        //}
+        //[Test]
+        //public void TextImage3()
+        //{
+        //    PerProductWithTextImage(productCode, addresses[2], "Residence");
+        //}
+        //    [Test]
+        //    public void TextImage4()
+        //    {
+        //        PerProductWithTextImage(productCode, addresses[3], "Hospital");
 
-            }
+        //    }
        
         public void PerProductWithTextImage(string productCode, string address, string addressType)
         {

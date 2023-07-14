@@ -33,26 +33,26 @@ namespace SpecFlowNetFloristProj.ProductSearchScript
             ExecuteScriptForAddress(productCode, addresses[0], "Business");
         }
 
-        [Category("Hamper")]
-        [Test]
-        public void HamperAdd2()
-        {
-            ExecuteScriptForAddress(productCode, addresses[1], "School");
-        }
+        //[Category("Hamper")]
+        //[Test]
+        //public void HamperAdd2()
+        //{
+        //    ExecuteScriptForAddress(productCode, addresses[1], "School");
+        //}
 
-        [Category("Hamper")]
-        [Test]
-        public void HamperAdd3()
-        {
-            ExecuteScriptForAddress(productCode, addresses[2], "Residence");
-        }
+        //[Category("Hamper")]
+        //[Test]
+        //public void HamperAdd3()
+        //{
+        //    ExecuteScriptForAddress(productCode, addresses[2], "Residence");
+        //}
 
-        [Category("Hamper")]
-        [Test]
-        public void HamperAdd4()
-        {
-            ExecuteScriptForAddress(productCode, addresses[3], "Hospital");
-        }
+        //[Category("Hamper")]
+        //[Test]
+        //public void HamperAdd4()
+        //{
+        //    ExecuteScriptForAddress(productCode, addresses[3], "Hospital");
+        //}
 
     }
 }

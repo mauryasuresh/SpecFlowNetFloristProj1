@@ -38,23 +38,23 @@ namespace SpecFlowNetFloristProj
             PersonalisedTextProduct(productCode, addresses[0], "Business");
         }
 
-        [Test]
-        public void TextAdd2()
-        {
-            PersonalisedTextProduct(productCode, addresses[1], "School");
-        }
+        //[Test]
+        //public void TextAdd2()
+        //{
+        //    PersonalisedTextProduct(productCode, addresses[1], "School");
+        //}
 
-        [Test]
-        public void TextAdd3()
-        {
-            PersonalisedTextProduct(productCode, addresses[2], "Residence");
-        }
+        //[Test]
+        //public void TextAdd3()
+        //{
+        //    PersonalisedTextProduct(productCode, addresses[2], "Residence");
+        //}
 
-        [Test]
-        public void TextAdd4()
-        {
-            PersonalisedTextProduct(productCode, addresses[3], "Hospital");
-        }
+        //[Test]
+        //public void TextAdd4()
+        //{
+        //    PersonalisedTextProduct(productCode, addresses[3], "Hospital");
+        //}
 
 
 

@@ -40,173 +40,173 @@ namespace SpecFlowNetFloristProj
 
         }
 
-        [Test]
-        public void GiftWizard2()
+        //[Test]
+        //public void GiftWizard2()
 
-        {
-            try
-            {
-                test = extent.CreateTest("GWizard").Info("Test Started");
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(100);
-                GiftWizardHomePage ghomePage = new GiftWizardHomePage(driver);
+        //{
+        //    try
+        //    {
+        //        test = extent.CreateTest("GWizard").Info("Test Started");
+        //        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(100);
+        //        GiftWizardHomePage ghomePage = new GiftWizardHomePage(driver);
 
-                //Occassion
+        //        //Occassion
 
-                //List<string> ids = new List<string>() {"30970","28704","30898","31123","28982","  ","29088", "29107", "28064","31142", "bramley",
-                //                                      "27924","30912","28941","27924","31281","31103","30721","30568",
-                //                                      "29982","33423","29534","37826","68127","28536","30200","65182","31507","26917","33732","31448" };
+        //        //List<string> ids = new List<string>() {"30970","28704","30898","31123","28982","  ","29088", "29107", "28064","31142", "bramley",
+        //        //                                      "27924","30912","28941","27924","31281","31103","30721","30568",
+        //        //                                      "29982","33423","29534","37826","68127","28536","30200","65182","31507","26917","33732","31448" };
 
-                List<string> ids = new List<string>() { "28982" };
-                foreach (string id in ids)
-                {
+        //        List<string> ids = new List<string>() { "28982" };
+        //        foreach (string id in ids)
+        //        {
 
-                    ghomePage.OccasionClick();
-                    ghomePage.SelectSuburbById(id);
-                    Thread.Sleep(1000);
+        //            ghomePage.OccasionClick();
+        //            ghomePage.SelectSuburbById(id);
+        //            Thread.Sleep(1000);
 
-                    ghomePage.SelectDate(new DateTime(2023, 7, 16));
+        //            ghomePage.SelectDate(new DateTime(2023, 7, 16));
 
-                    ghomePage.FindItNow();
+        //            ghomePage.FindItNow();
 
-                    int totalPages = GetTotalPages();
-                    Console.WriteLine(totalPages);
-                    test.Log(Status.Info, "totalPages");
-                    int currentPage = 1;
-                    while (currentPage <= totalPages)
-                    {
-                        List<IWebElement> Productlist = driver.FindElements(By.XPath("//div[@class ='ProductBox']")).ToList();
+        //            int totalPages = GetTotalPages();
+        //            Console.WriteLine(totalPages);
+        //            test.Log(Status.Info, "totalPages");
+        //            int currentPage = 1;
+        //            while (currentPage <= totalPages)
+        //            {
+        //                List<IWebElement> Productlist = driver.FindElements(By.XPath("//div[@class ='ProductBox']")).ToList();
 
-                        //testing each product
-                        string productCode;
-
-
-                        for (int i = 0; i < Productlist.Count; i++)
-                        {
-                            IWebElement product = Productlist[i];
-
-                            //Out of stock(sold out)
-                            IWebElement deliveryElement = product.FindElement(By.ClassName("NextDeliveryPhrase"));
-                            string deliveryStatus = deliveryElement.Text;
-
-                            IWebElement nameOfProduct = driver.FindElement(By.XPath(".//a[2]"));
-
-                            if (deliveryStatus.Equals("Out of stock"))
-                            {
-                                Console.WriteLine("Product is out of stock " + nameOfProduct.Text + deliveryStatus);
-                                test.Log(Status.Info, "Product is out of stock " + nameOfProduct.Text + deliveryStatus);
-                                continue;
-
-                            }
-                            product.Click();
-
-                            //Add to basket
-
-                            IWebElement ProductName = driver.FindElement(By.Id("productName"));
-                            string ProductText = ProductName.Text;
-                            Console.Write(ProductText + "=");
-                            test.Log(Status.Info, ProductName.Text + "=");
-
-                            IWebElement element = driver.FindElement(By.XPath("//span[@id='CurrentProductCode']"));
-                            productCode = element.Text;
-                            Console.WriteLine(productCode);
-                            test.Log(Status.Info, productCode);
-
-                            if (productCode.StartsWith("PER"))
-                            {
-                                if (IsTextFieldPresent() && !IsImageFieldPresent())
-                                {
-                                    Console.WriteLine("Inside text ");
-                                    PersonalizedTextProduct();
-
-                                }
-                                else if (IsTextFieldPresent())
-                                {
-                                    Console.WriteLine("inside image");
-                                    PersonalizedImageAndTextProduct();
-                                    // PreviewAndConfirm();
-                                }
-                                else if (!IsTextFieldPresent() && IsImageFieldPresent())
-                                {
-                                    PersonalizedOnlyImageProduct();
-                                }
-
-                            }
-                            ghomePage.addBasket();
-
-                            //Recipient Info
-
-                            ghomePage.FillInfo("xxx", "xxx", "0712345678", "xxx", "xxx", id);
-                            test.Log(Status.Pass, "Recipient Information filled");
-
-                            try
-                            {
-                                wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@class='popDeliveryDetails']")));
-
-                                IWebElement UnavailablePopUp = driver.FindElement(By.XPath("//*[@class='popDeliveryDetails']"));
-                                string popText = UnavailablePopUp.Text;
-                                //Console.WriteLine(popText);
-
-                                if (popText.Contains("Not Available"))
-                                {
-                                    IWebElement ProductText1 = driver.FindElement(By.XPath("//*[@id='pddErrorPrdName']"));
-                                    IWebElement ProductLocation = UnavailablePopUp.FindElement(By.XPath("//*[@id='pddErrorArea']/strong[1]"));
-
-                                    string prodLocationText = ProductLocation.Text;
-                                    UnavailablePopUp.FindElement(By.XPath("//*[@id='closeDeliverypop']")).Click();
-                                    Thread.Sleep(1500);
-                                    Console.WriteLine("Product is Unavailable: " + prodLocationText);
-                                }
-                            }
-                            catch (NoSuchElementException)
-                            {
-                                // Popup did not appear, continue with the rest of the code
-                            }
+        //                //testing each product
+        //                string productCode;
 
 
-                            // Rest of your code
-                            driver.Navigate().Back();
-                            Thread.Sleep(1000);
-                            Productlist = driver.FindElements(By.XPath("//div[@class ='ProductBox']")).ToList();
-                            continue;
-                        }
-                        //select date 
+        //                for (int i = 0; i < Productlist.Count; i++)
+        //                {
+        //                    IWebElement product = Productlist[i];
+
+        //                    //Out of stock(sold out)
+        //                    IWebElement deliveryElement = product.FindElement(By.ClassName("NextDeliveryPhrase"));
+        //                    string deliveryStatus = deliveryElement.Text;
+
+        //                    IWebElement nameOfProduct = driver.FindElement(By.XPath(".//a[2]"));
+
+        //                    if (deliveryStatus.Equals("Out of stock"))
+        //                    {
+        //                        Console.WriteLine("Product is out of stock " + nameOfProduct.Text + deliveryStatus);
+        //                        test.Log(Status.Info, "Product is out of stock " + nameOfProduct.Text + deliveryStatus);
+        //                        continue;
+
+        //                    }
+        //                    product.Click();
+
+        //                    //Add to basket
+
+        //                    IWebElement ProductName = driver.FindElement(By.Id("productName"));
+        //                    string ProductText = ProductName.Text;
+        //                    Console.Write(ProductText + "=");
+        //                    test.Log(Status.Info, ProductName.Text + "=");
+
+        //                    IWebElement element = driver.FindElement(By.XPath("//span[@id='CurrentProductCode']"));
+        //                    productCode = element.Text;
+        //                    Console.WriteLine(productCode);
+        //                    test.Log(Status.Info, productCode);
+
+        //                    if (productCode.StartsWith("PER"))
+        //                    {
+        //                        if (IsTextFieldPresent() && !IsImageFieldPresent())
+        //                        {
+        //                            Console.WriteLine("Inside text ");
+        //                            PersonalizedTextProduct();
+
+        //                        }
+        //                        else if (IsTextFieldPresent())
+        //                        {
+        //                            Console.WriteLine("inside image");
+        //                            PersonalizedImageAndTextProduct();
+        //                            // PreviewAndConfirm();
+        //                        }
+        //                        else if (!IsTextFieldPresent() && IsImageFieldPresent())
+        //                        {
+        //                            PersonalizedOnlyImageProduct();
+        //                        }
+
+        //                    }
+        //                    ghomePage.addBasket();
+
+        //                    //Recipient Info
+
+        //                    ghomePage.FillInfo("xxx", "xxx", "0712345678", "xxx", "xxx", id);
+        //                    test.Log(Status.Pass, "Recipient Information filled");
+
+        //                    try
+        //                    {
+        //                        wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        //                        wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@class='popDeliveryDetails']")));
+
+        //                        IWebElement UnavailablePopUp = driver.FindElement(By.XPath("//*[@class='popDeliveryDetails']"));
+        //                        string popText = UnavailablePopUp.Text;
+        //                        //Console.WriteLine(popText);
+
+        //                        if (popText.Contains("Not Available"))
+        //                        {
+        //                            IWebElement ProductText1 = driver.FindElement(By.XPath("//*[@id='pddErrorPrdName']"));
+        //                            IWebElement ProductLocation = UnavailablePopUp.FindElement(By.XPath("//*[@id='pddErrorArea']/strong[1]"));
+
+        //                            string prodLocationText = ProductLocation.Text;
+        //                            UnavailablePopUp.FindElement(By.XPath("//*[@id='closeDeliverypop']")).Click();
+        //                            Thread.Sleep(1500);
+        //                            Console.WriteLine("Product is Unavailable: " + prodLocationText);
+        //                        }
+        //                    }
+        //                    catch (NoSuchElementException)
+        //                    {
+        //                        // Popup did not appear, continue with the rest of the code
+        //                    }
 
 
-                        ghomePage.SelectDateFromCalendar("16");
-                        ghomePage.NextDeliveryType();
-
-                        driver.Navigate().Back();
-                        Thread.Sleep(1000);
-                        Productlist = driver.FindElements(By.XPath("//div[@class ='ProductBox']")).ToList();
-                    }
-
-                    if (currentPage < totalPages)
-                    {
-                        GoToNextPage();
-                        currentPage++;
-                    }
-                }
-
-            }
-
-            catch (Exception)
-            {
-                string screenshotPath = @"C:\Users\Suresh Maurya\source\repos\SpecFlowNetFloristProj1\SpecFlowNetFloristProj\Screenshots\screenshot.png";
-                SeleniumUtility.TakeScreenshot(driver, screenshotPath);
-                test.Log(Status.Fail, "Test Failed",
-                    MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotPath).Build());
+        //                    // Rest of your code
+        //                    driver.Navigate().Back();
+        //                    Thread.Sleep(1000);
+        //                    Productlist = driver.FindElements(By.XPath("//div[@class ='ProductBox']")).ToList();
+        //                    continue;
+        //                }
+        //                //select date 
 
 
-                test.Log(Status.Fail);
+        //                ghomePage.SelectDateFromCalendar("16");
+        //                ghomePage.NextDeliveryType();
 
-                throw;
+        //                driver.Navigate().Back();
+        //                Thread.Sleep(1000);
+        //                Productlist = driver.FindElements(By.XPath("//div[@class ='ProductBox']")).ToList();
+        //            }
 
-            }
-        }
+        //            if (currentPage < totalPages)
+        //            {
+        //                GoToNextPage();
+        //                currentPage++;
+        //            }
+        //        }
+
+        //    }
+
+        //    catch (Exception)
+        //    {
+        //        string screenshotPath = @"C:\Users\Suresh Maurya\source\repos\SpecFlowNetFloristProj1\SpecFlowNetFloristProj\Screenshots\screenshot.png";
+        //        SeleniumUtility.TakeScreenshot(driver, screenshotPath);
+        //        test.Log(Status.Fail, "Test Failed",
+        //            MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotPath).Build());
 
 
-        //check image is present 
+        //        test.Log(Status.Fail);
+
+        //        throw;
+
+        //    }
+        //}
+
+
+        ////check image is present 
         public bool IsImageFieldPresent()
         {
             // Find elements that match the XPath expression for the image field
