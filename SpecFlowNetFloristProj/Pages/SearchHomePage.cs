@@ -49,6 +49,8 @@ namespace SpecFlowNetFloristProj.Pages
                 try
                 {
                     products[i].Click();
+                   IWebElement productName = driver.FindElement(By.XPath("//*[@id='productName']"));
+                    Console.WriteLine("ProductName is :" + productName.Text);
                     Thread.Sleep(1000);
                 }
                 catch (StaleElementReferenceException)
